@@ -1,10 +1,10 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>注文概要</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -35,12 +35,9 @@
       display: flex;
       width: 100%;
       min-height: 721px;
-      background: #fff;
     }
 
-    /* =========================
-       Left: Order summary
-       ========================= */
+    /* 左側 */
 
     .order-summary {
       width: 50.2%;
@@ -60,7 +57,6 @@
       line-height: 1;
       font-weight: 700;
       color: #555;
-      letter-spacing: -0.5px;
     }
 
     .current-price {
@@ -74,86 +70,31 @@
       font-size: 43px;
       line-height: 1;
       font-weight: 700;
-      letter-spacing: -1px;
     }
 
     .current-price .tax-label {
       margin-left: 9px;
       font-size: 22px;
-      line-height: 1;
       color: #555;
-      font-weight: 400;
     }
 
     .product {
       display: flex;
       align-items: center;
-      min-height: 76px;
+      min-height: 82px;
       margin-bottom: 30px;
     }
 
+    /*
+     * 実際の画像をそのまま表示する
+     */
     .abp-icon {
-      position: relative;
       flex: 0 0 82px;
       width: 82px;
       height: 82px;
       margin-right: 31px;
-      background: #ed1b3b;
-      clip-path: polygon(
-        27% 0,
-        73% 0,
-        100% 27%,
-        100% 73%,
-        73% 100%,
-        27% 100%,
-        0 73%,
-        0 27%
-      );
-      border: 0;
-    }
-
-    .abp-icon::before {
-      content: "";
-      position: absolute;
-      inset: 4px;
-      background: #fff;
-      clip-path: polygon(
-        27% 0,
-        73% 0,
-        100% 27%,
-        100% 73%,
-        73% 100%,
-        27% 100%,
-        0 73%,
-        0 27%
-      );
-      z-index: 0;
-    }
-
-    .abp-icon::after {
-      content: "ABP";
-      position: absolute;
-      inset: 7px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ed1b3b;
-      color: #fff;
-      font-size: 29px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: -2px;
-      clip-path: polygon(
-        27% 0,
-        73% 0,
-        100% 27%,
-        100% 73%,
-        73% 100%,
-        27% 100%,
-        0 73%,
-        0 27%
-      );
-      z-index: 1;
+      display: block;
+      object-fit: contain;
     }
 
     .product-info {
@@ -177,7 +118,6 @@
       gap: 20px;
       font-size: 18px;
       line-height: 1;
-      color: #555;
     }
 
     .quantity {
@@ -202,7 +142,6 @@
       color: #777;
       font-size: 15px;
       font-weight: 700;
-      line-height: 1;
     }
 
     .summary-divider {
@@ -218,9 +157,7 @@
       justify-content: space-between;
       min-height: 48px;
       padding-left: 113px;
-      padding-right: 0;
       font-size: 22px;
-      line-height: 1;
     }
 
     .summary-row .label {
@@ -230,7 +167,6 @@
     .summary-row .value {
       color: #111;
       font-weight: 700;
-      white-space: nowrap;
     }
 
     .discount {
@@ -238,16 +174,7 @@
       margin: 16px 0 13px 113px;
       color: #0789c7;
       font-size: 22px;
-      line-height: 1;
       text-decoration: none;
-    }
-
-    .tax-row {
-      margin-top: 3px;
-    }
-
-    .due-today {
-      margin-top: 4px;
     }
 
     .bottom-divider {
@@ -257,9 +184,7 @@
       background: #e2e2e2;
     }
 
-    /* =========================
-       Right: Customer/payment
-       ========================= */
+    /* 右側 */
 
     .payment-panel {
       position: relative;
@@ -281,7 +206,6 @@
       align-items: center;
       margin-bottom: 42px;
       font-size: 24px;
-      line-height: 1;
       white-space: nowrap;
     }
 
@@ -294,12 +218,10 @@
       margin: 0 12px;
       color: #777;
       font-size: 26px;
-      font-weight: 300;
     }
 
     .panel-header .inactive {
       color: #777;
-      font-weight: 400;
     }
 
     .close-button {
@@ -313,8 +235,6 @@
       background: transparent;
       color: #777;
       font-size: 31px;
-      line-height: 20px;
-      font-weight: 300;
       cursor: pointer;
     }
 
@@ -325,7 +245,6 @@
       color: #666;
       font-size: 22px;
       line-height: 1.5;
-      letter-spacing: -0.3px;
     }
 
     .field {
@@ -339,8 +258,6 @@
       margin-bottom: 11px;
       color: #555;
       font-size: 20px;
-      line-height: 1;
-      font-weight: 400;
     }
 
     .required {
@@ -357,7 +274,6 @@
       border: 1px solid #d5d5d5;
       border-radius: 6px;
       background: #fff;
-      color: #444;
       font-family: inherit;
       font-size: 20px;
       outline: none;
@@ -367,20 +283,14 @@
       padding: 0 17px;
     }
 
-    .input:focus,
-    .select:focus {
-      border-color: #0789c7;
-      box-shadow: 0 0 0 1px #0789c7;
-    }
-
     .select-wrapper {
       position: relative;
     }
 
     .select {
       appearance: none;
-      -webkit-appearance: none;
       padding: 0 48px 0 20px;
+      color: #444;
       cursor: pointer;
     }
 
@@ -409,29 +319,11 @@
       color: #fff;
       font-family: inherit;
       font-size: 25px;
-      line-height: 60px;
       font-weight: 700;
-      text-align: center;
       cursor: pointer;
     }
 
-    .next-button:hover {
-      background: #087fb6;
-    }
-
-    .next-button:active {
-      transform: translateY(1px);
-    }
-
-    /* =========================
-       Responsive
-       ========================= */
-
     @media (max-width: 800px) {
-      body {
-        min-height: 100vh;
-      }
-
       .checkout {
         flex-direction: column;
       }
@@ -448,7 +340,7 @@
 
       .payment-panel {
         min-height: 620px;
-        padding: 25px 24px 25px;
+        padding: 25px 24px;
       }
 
       .summary-divider {
@@ -468,66 +360,6 @@
         margin-left: 0;
         width: 100%;
       }
-
-      .next-button {
-        left: 0;
-        width: 100%;
-      }
-
-      .product-meta {
-        flex-wrap: wrap;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .current-price .price {
-        font-size: 36px;
-      }
-
-      .current-price .tax-label {
-        font-size: 18px;
-      }
-
-      .product {
-        align-items: flex-start;
-      }
-
-      .abp-icon {
-        flex-basis: 65px;
-        width: 65px;
-        height: 65px;
-        margin-right: 18px;
-      }
-
-      .abp-icon::before {
-        inset: 3px;
-      }
-
-      .abp-icon::after {
-        inset: 5px;
-        font-size: 22px;
-      }
-
-      .product-name {
-        font-size: 18px;
-      }
-
-      .product-meta {
-        font-size: 15px;
-      }
-
-      .summary-row,
-      .discount {
-        font-size: 18px;
-      }
-
-      .panel-header {
-        font-size: 20px;
-      }
-
-      .security-message {
-        font-size: 18px;
-      }
     }
   </style>
 </head>
@@ -535,9 +367,12 @@
 <body>
   <main class="checkout">
 
-    <section class="order-summary" aria-label="注文概要">
+    <section class="order-summary">
       <div class="summary-inner">
-        <h1 class="summary-title">ご注文の概要</h1>
+
+        <h1 class="summary-title">
+          ご注文の概要
+        </h1>
 
         <div class="current-price">
           <span class="price">現在 ¥660</span>
@@ -545,19 +380,31 @@
         </div>
 
         <div class="product">
-          <div class="abp-icon" aria-label="Adblock Plus"></div>
+
+          <!-- 画像を挿入 -->
+          <img
+            class="abp-icon"
+            src="/tab.png"
+            alt="Adblock Plus"
+          >
 
           <div class="product-info">
-            <p class="product-name">Tokyo AdBlocker Premium</p>
+
+            <p class="product-name">
+              Adblock Plus Premium
+            </p>
 
             <div class="product-meta">
-              <span class="quantity">数量：1</span>
+              <span class="quantity">
+                数量：1
+              </span>
 
               <span class="start-date">
                 <span>2026年9月28日から</span>
                 <span class="info-icon">i</span>
               </span>
             </div>
+
           </div>
         </div>
 
@@ -568,14 +415,16 @@
           <span class="value">¥600</span>
         </div>
 
-        <a class="discount" href="#">割引を追加</a>
+        <a class="discount" href="#">
+          割引を追加
+        </a>
 
-        <div class="summary-row tax-row">
+        <div class="summary-row">
           <span class="label">消費税</span>
           <span class="value">¥60</span>
         </div>
 
-        <div class="summary-row due-today">
+        <div class="summary-row">
           <span class="label">今日が期日</span>
           <span class="value">¥660</span>
         </div>
@@ -583,16 +432,17 @@
         <div class="bottom-divider"></div>
 
         <div class="summary-row">
-          <span class="label">期限 2027年9月28日</span>
+          <span class="label">期限 2026年9月28日</span>
           <span class="value">¥660</span>
         </div>
+
       </div>
     </section>
 
-    <section class="payment-panel" aria-label="お客様の詳細">
+    <section class="payment-panel">
       <div class="payment-inner">
 
-        <button class="close-button" type="button" aria-label="閉じる">
+        <button class="close-button" type="button">
           ×
         </button>
 
@@ -616,7 +466,6 @@
             id="email"
             class="input"
             type="email"
-            autocomplete="email"
           >
         </div>
 
@@ -628,15 +477,18 @@
           <div class="select-wrapper">
             <select id="country" class="select">
               <option selected>日本</option>
+              <option>韓国</option>
+              <option>台湾</option>
+              <option>中国</option>
               <option>アメリカ合衆国</option>
               <option>イギリス</option>
-              <option>韓国</option>
-              <option>中国(台湾を除く)</option>
-              <option>台湾</option>
+              <option>カナダ</option>
               <option>インド</option>
+              <option>タイ</option>
+              <option>フィリピン</option>
               <option>ブラジル</option>
-              <option>インドネシア</option>
             </select>
+
             <span class="select-arrow"></span>
           </div>
         </div>
