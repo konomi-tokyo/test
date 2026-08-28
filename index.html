@@ -1630,17 +1630,12 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
   </div>
 
-  <!-- ===== 8. FOOTER ===== -->
-<!--
-  The page sets nofooter=1: the sitewide footer is light-themed and several
-  screens tall, which would swamp this card layout. Three links, matching what
-  the design calls for.
--->
+
 <footer class="whats-new-footer">
   <nav class="whats-new-footer__links" aria-label="法的情報とサポート">
-    <a href="/en/privacy" hreflang="en">プライバシーポリシー</a>
-    <a href="/en/terms" hreflang="en">利用規約</a>
-    <a href="https://help.adblockplus.org" hreflang="en">サポート</a>
+    <a href="#" hreflang="en">プライバシーポリシー</a>
+    <a href="#" hreflang="en">利用規約</a>
+    <a href="#" hreflang="en">サポート</a>
   </nav>
   <p class="whats-new-footer__legal">konoMi Tokyo · Tokyo AdBlocker 2026</p>
 </footer>
@@ -1659,7 +1654,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
       <img alt="閉じる" src="https://adblockplus.org/img/account-restore-found__close.svg?3078354648" height="24" width="24">
     </button>
     <div class="account-restore-found-logo">
-      <img alt src="https://adblockplus.org/img/adblock-plus-latest.svg?3078354648" height="40" width="40">
+      <img alt src="/tab.png" height="40" width="40">
       <span>Adblock<strong>Plus</strong> Premium</span>
     </div>
     <div class="account-restore-found-body">
@@ -1674,15 +1669,10 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
 <script type="module" src="https://adblockplus.org/js/prevent-duplicate-subscription-user-accounts.js?1174260277"></script>
 
-<!--
-  The stats load first and separately. They import nothing, so a blocked
-  cdn.paddle.com — a live possibility on a page whose every visitor runs a
-  content blocker — takes down the checkout but leaves the page's main content
-  standing. See the header comment in whats-new-stats.js.
--->
+
 <script type="module" src="https://adblockplus.org/js/pages/whats-new-stats.js?1174260277"></script>
 
-<!-- paddle.js must precede the module: modules/paddle.js calls Paddle.Initialize() at top level. -->
+
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script type="module" src="https://adblockplus.org/js/pages/whats-new.js?1174260277"></script>
 
@@ -1723,7 +1713,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
             </g>
           </svg>
           <span>
-            We use some cookies to give you the best experience on our website. By using our site you are aware that we are using cookies and you can change this any time. <a href="https://adblockplus.org/en/cookie-information" hreflang="en">Learn more</a>
+            We use some cookies to give you the best experience on our website. By using our site you are aware that we are using cookies and you can change this any time. <a href="/en/cookie-information" hreflang="en">Learn more</a>
           </span>
         </p>
       </div>
@@ -1820,7 +1810,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     <p>
       We use some cookies to give you the best experience on our website.
       <a
-        href="https://adblockplus.org/en/cookie-information" hreflang="en"
+        href="/en/cookie-information" hreflang="en"
         title="More information about cookies"
         target="_blank">Read more</a>
     </p>
@@ -1870,7 +1860,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
   <div class="bg-light">
     <div class="container section">
-        We use some cookies to give you the best experience on our website. By using our site you are aware that we are using cookies and you can change this any time. <a href="https://adblockplus.org/en/cookie-information" hreflang="en">Learn more</a>
+        We use some cookies to give you the best experience on our website. By using our site you are aware that we are using cookies and you can change this any time. <a href="/en/cookie-information" hreflang="en">Learn more</a>
     </div>
   </div>
 
