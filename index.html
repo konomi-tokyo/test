@@ -468,17 +468,8 @@ window.addEventListener("load", function onLoad() {
   }
 });
 
-adblock.afterAdblockPlusDetected(() => {
-  if (loadReported) {
-    adblock.log("late-injection", {
-      entryVersion: "1.0.0",
-      scriptTime: adblock.scriptTime,
-      injectionTime: adblock.injectionTime,
-      loadTime: adblock.loadTime,
-      version: adblock.adblockPlus.version,
-      browser: adblock.settings.detectedBrowser,
-      operatingSystem: adblock.settings.detectedOperatingSystem,
-    });
+
+
   }
 });
 
