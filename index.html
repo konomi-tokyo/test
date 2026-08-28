@@ -688,36 +688,23 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     <div class="whats-new-divider"></div>
     <!-- ===== 3. HERO ===== -->
 <section class="whats-new-inner whats-new-hero">
-  <!--
-    Shown by ?trial=7 only. It is the first thing the trial states say, because
-    "no charge today" is the objection the price answers a moment later.
-  -->
   <p class="whats-new-trial-badge" data-wn-offer="trial">
-    7 日間無料 · 今日は請求なし
+   まずは 7 日間 · 無料でお試し
   </p>
 
   <h2 class="whats-new-hero__heading" data-wn-heading-only="standard">
     ブラウザーの広告はブロックできています。
-    <em>では、それ以外はどうでしょう？</em>
+    <em>でも、それ以外はどうでしょう？</em>
   </h2>
 
-  <!--
-    ?variant=vpn-opd's own heading. It names the gap rather than the product,
-    which is what the dialog the visitor just came from promised them. The plain
-    ?variant=vpn keeps the heading above.
-  -->
-  <h2 class="whats-new-hero__heading" data-wn-heading-only="opd">
+   <h2 class="whats-new-hero__heading" data-wn-heading-only="opd">
     あなたの通信は無防備です。
     <em>Tokyo AdBlocker VPN がその隙間を埋めます。</em>
   </h2>
 
   <p class="whats-new-hero__text" data-wn-only="default">
-    Cookie バナー、登録を促すポップアップ、追従する動画。Premium は広告ブロックだけでは残ってしまうものをすべて取り除きます。iPhone と iPad では、アプリ内の広告も取り除きます。
-    <!--
-      A sentence of its own, not part of the paragraph above: it is only true
-      while a trial is on offer, and the paragraph has to stand without it.
-    -->
-    <em class="whats-new-hero__trial-line" data-wn-offer="trial">— 7 日間無料でお試しください。</em>
+    Cookie 許可バナー、登録を促すポップアップ、追尾してくる動画。Premium は広告ブロックだけでは残ってしまうものをすべて取り除きます。iPhone と iPad では、アプリ内の広告も取り除きます。
+        <em class="whats-new-hero__trial-line" data-wn-offer="trial">— 7 日間無料でお試しください。</em>
   </p>
 
   <p class="whats-new-hero__text" data-wn-only="vpn">
@@ -725,12 +712,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     <em class="whats-new-hero__trial-line" data-wn-offer="trial">— 7 日間無料でお試しください。</em>
   </p>
 
-  <!--
-    A jump to the comparison table rather than a second, shorter list of the
-    same features. The chevron points down and stays down: it signals where the
-    link goes, not an open or closed state.
-  -->
-  <p class="whats-new-jump">
+    <p class="whats-new-jump">
     <a class="whats-new-jump__link" href="#whats-new-benefits"
        data-click='{"type":"whats-new-cta","trigger":"see-included"}'>
       含まれる内容を見る
@@ -754,12 +736,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
       Tokyo AdBlocker の入手方法は 2 つ。いつでも解約できます。
     </p>
 
-    <!--
-      Both cards show a per-month figure so they compare directly, with the real
-      charge spelled out underneath. Every number here is written by whats-new.js
-      from modules/prices.js; the markup ships none of its own.
-    -->
-    <div class="whats-new-plans">
+      <div class="whats-new-plans">
 
       <article class="whats-new-plan">
         <h3 class="whats-new-plan__name">年額</h3>
@@ -813,12 +790,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
             広告に潜むマルウェアからの保護
           </li>
         </ul>
-        <!--
-          Enabled by whats-new.js once there is a real price to charge. Both
-          labels ship and the CSS hides one, so the label always matches the
-          offer the page is showing, in every language, with no JS.
-        -->
-        <button type="button" class="whats-new-button whats-new-checkout-button" data-frequency="monthly" data-click="{&quot;type&quot;:&quot;checkout-start&quot;,&quot;currency&quot;:&quot;JPY&quot;,&quot;frequency&quot;:&quot;monthly&quot;,&quot;amount&quot;:600,&quot;trial&quot;:0,&quot;trigger&quot;:&quot;pricing-monthly&quot;}">
+               <button type="button" class="whats-new-button whats-new-checkout-button" data-frequency="monthly" data-click="{&quot;type&quot;:&quot;checkout-start&quot;,&quot;currency&quot;:&quot;JPY&quot;,&quot;frequency&quot;:&quot;monthly&quot;,&quot;amount&quot;:600,&quot;trial&quot;:0,&quot;trigger&quot;:&quot;pricing-monthly&quot;}">
           <span data-wn-offer="standard">無料プラン を入手</span>
           <span data-wn-offer="trial">無料トライアルを開始</span>
         </button>
@@ -868,7 +840,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
           <li>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            60 日間の返金保証
+            90 日間の返金保証
           </li>
         </ul>
         <!-- Enabled by whats-new.js once there is a real price to charge. -->
@@ -883,7 +855,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
   </div>
 
   <p class="whats-new-pricing__reassurance">
-    60 日間の返金保証 · いつでも解約可能 · 隠れた費用なし
+    90 日間の返金保証 · いつでも解約可能 · 解約手数料なし
   </p>
 
   <p class="whats-new-pricing__sign-in">
@@ -916,18 +888,6 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     Premium は Tokyo AdBlocker Plus DNS と VPN によって、保護をブラウザーの外側にも広げます。広告がアプリに届く前にブロックし、通信を暗号化し、IP アドレスを隠します。信頼できる Tokyo AdBlocker Plus はそのままに、対象がすべてに広がります。
   </p>
 
-  <!--
-    Tick and cross are decorative; the .sr-only text in each cell carries the
-    value, so nothing is conveyed by icon alone. Same structure as
-    includes/video-trial/comparison.html.
-
-    Every repeated string here spells out its default rather than relying on an
-    earlier bare reference. The CMS takes a key's default from its first
-    appearance in the file, so with bare references a row could not be reordered
-    without breaking the build — moving one above the row that happened to hold
-    the default failed the whole page. Spelling the default out each time makes
-    row order irrelevant.
-  -->
   <div class="whats-new-comparison">
     <table class="whats-new-comparison__table">
       <thead>
@@ -1067,12 +1027,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
           </td>
         </tr>
 
-        <!--
-          One row for floating video players, newsletter pop-ups and
-          notification prompts. "Block more distractions" is the product's own
-          name for the feature, used on /update and /premium.
-        -->
-        <tr>
+               <tr>
           <th scope="row">
             <span class="whats-new-comparison__title">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1084,7 +1039,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
               </span>
             </span>
             <span class="whats-new-comparison__desc">
-              追従する動画プレーヤー、メール登録ボックス、通知の許可要求。
+              追尾してくる動画プレーヤー、メール登録ボックス、通知の許可要求。
             </span>
           </th>
           <td>
@@ -1124,11 +1079,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
       </tbody>
 
-      <!-- Everything the VPN adds, kept together so the three claims read as one
-           capability rather than three unrelated rows. Same row-group pattern as
-           the iOS block below. The whole group belongs to the VPN variant, so it
-           is the one place a row group drops out rather than a string swapping. -->
-      <tbody data-wn-only="vpn">
+            <tbody data-wn-only="vpn">
         <tr>
           <th colspan="3" scope="rowgroup" class="whats-new-comparison__group">
             Tokyo AdBlocker Plus VPN を使うと
@@ -1138,10 +1089,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
         <tr>
           <th scope="row">
             <span class="whats-new-comparison__title">
-              <!-- A lock, not the shield: the shield now belongs to the malware
-                   row above, and two identical glyphs in one table read as a
-                   mistake. -->
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
               </svg>
@@ -1215,13 +1163,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
       </tbody>
 
-      <!--
-        A separate row group, because these three apply on one platform only.
-        The heading is a th spanning all columns with scope="rowgroup", so
-        screen readers announce it as the heading for the rows beneath rather
-        than as another benefit.
-      -->
-      <tbody>
+            <tbody>
         <tr>
           <th colspan="3" scope="rowgroup" class="whats-new-comparison__group">
             iPhone または iPad をお使いの場合
@@ -1286,10 +1228,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
             <span class="whats-new-comparison__title">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <!-- Eye outline plus a slash, and no pupil. The pupil circle sat
-                     directly under the slash and the two merged into a blob at
-                     15px. -->
-                <path d="M2.5 12S6.5 5.5 12 5.5 21.5 12 21.5 12 17.5 18.5 12 18.5 2.5 12 2.5 12Z"/>
+                                <path d="M2.5 12S6.5 5.5 12 5.5 21.5 12 21.5 12 17.5 18.5 12 18.5 2.5 12 2.5 12Z"/>
                 <line x1="4" y1="4" x2="20" y2="20"/>
               </svg>
               <span class="whats-new-comparison__title-text">
@@ -1317,12 +1256,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     iPhone で購入した場合は、ファミリー共有も利用できます。
   </p>
 
-  <!--
-    A link to the pricing cards rather than a checkout button. At this point the
-    visitor has read the comparison but has not chosen a plan, so opening Paddle
-    on the yearly plan would pick for them.
-  -->
-  <p class="whats-new-cta">
+   <p class="whats-new-cta">
     <a class="whats-new-button" href="#whats-new-pricing"
        data-click='{"type":"whats-new-cta","trigger":"benefits"}'>
       <span data-wn-offer="standard">Tokyo AdBlocker を入手</span>
@@ -1331,12 +1265,6 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
   </p>
 </section>
 
-    <!-- ===== 6. TESTIMONIALS =====
-  The same three Chrome Web Store reviews /video-trial uses, quoted verbatim with
-  the reviewer names and dates as they appear publicly. Do not edit the quotes to
-  read better — if a quote needs shortening, use an ellipsis and keep the meaning
-  intact.
--->
 <section class="whats-new-inner whats-new-inner--wide whats-new-section whats-new-testimonials">
   <h2 class="whats-new-section__heading">
     仲間に加わりませんか。
@@ -1346,9 +1274,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     私たちの言葉ではなく、使っている人の声をお聞きください。慣れ親しんだ信頼できる Tokyo AdBlocker はそのままに、広告ブロックだけでは残ってしまうものまで取り除きます。
   </p>
 
-  <!-- Aggregate proof above the individual quotes: reach and longevity first,
-       then the voices. -->
-  <ul class="whats-new-proof">
+   <ul class="whats-new-proof">
     <li>
       <p class="whats-new-proof__value">2024 年から</p>
       <p class="whats-new-proof__label">いま世界でアツい広告ブロッカー</p>
@@ -1366,9 +1292,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     </li>
   </ul>
 
-  <!-- The star row is decorative; the rating is carried as .sr-only text so it
-       is not conveyed by glyph alone. -->
-  <div class="whats-new-quotes">
+   <div class="whats-new-quotes">
 
     <figure class="whats-new-quote">
       <p class="whats-new-quote__stars">
@@ -1420,9 +1344,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
   </div>
 
-  <!-- Links to the pricing cards rather than opening Paddle on a plan the
-       visitor has not chosen, matching the CTA under the benefits table. -->
-  <p class="whats-new-cta">
+   <p class="whats-new-cta">
     <a class="whats-new-button" href="#whats-new-pricing"
        data-click='{"type":"whats-new-cta","trigger":"testimonials"}'>
       <span data-wn-offer="standard">Tokyo AdBlocker を入手</span>
@@ -1439,12 +1361,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
   <div class="whats-new-faq">
 
-    <!--
-      First, and only while a trial is on offer: what happens at the end of it
-      is the question a free trial creates, so it goes before the ones the page
-      answers anyway.
-    -->
-    <details class="whats-new-faq__item" data-wn-offer="trial">
+      <details class="whats-new-faq__item" data-wn-offer="trial">
       <summary class="whats-new-faq__question">
         <span>無料トライアルが終わるとどうなりますか？</span>
         <svg class="whats-new-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -1500,7 +1417,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
              aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
       <p class="whats-new-faq__answer">
-        はい。60 日間、理由を問わず返金します。Premium がご期待に沿わない場合はサポートまでご連絡ください。全額を返金いたします。解約はアカウントページからいつでも可能です。
+        はい。90 日間、理由を問わず返金します。Premium がご期待に合わない場合はサポートまでご連絡ください。全額を返金いたします。解約はアカウントページからいつでも可能です。
       </p>
     </details>
 
