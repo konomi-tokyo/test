@@ -524,29 +524,10 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 
 })()</script>
 <!-- TODO: Change settings.js to set location only and implement location based features inline below -->
-<script src="https://adblockplus.org/settings.js?1174260277"></script>
+
     
       
-  <!--
-    The page has two independent axes, and the URL sets each one:
 
-      ?variant=<name>  which presentation — the copy, the heading, the top block
-      ?trial=<days>    which offer — pay now, or a free trial and then pay
-
-    Both are resolved here, in <head>, before the body paints, so the state the
-    visitor did not ask for is never briefly visible. Each axis becomes its own
-    attribute on <html>, and the CSS then needs one rule for each axis rather
-    than one for each combination — a new campaign is a line in PRESETS below,
-    not new CSS. The six states are listed in the Variants block in
-    static/css/pages/whats-new.css.
-
-    No-JS visitors get the default presentation and the pay-now offer, which is
-    the state most of them are meant to see.
-
-    `variant` is also the experiment framework's own parameter, but that one is
-    read as a number inside adblock.experiment() only, and this page never
-    starts an experiment — so a named value here cannot collide with it.
-  -->
   <script>(() => {
     const PRESETS = {
       // The VPN copy on its own. Traffic is already pointed at this one.
@@ -556,19 +537,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
       "vpn-opd": { variant: "vpn", heading: "opd", top: "image" },
     };
 
-    /*
-     * Trial lengths this page can sell, and the only ones ?trial is allowed to
-     * ask for. Two things have to be true before a length goes in here:
-     *
-     *   - The copy names it. "7 days" is written out in the badge, the hero,
-     *     the pricing heading and the FAQ, in 19 languages, rather than
-     *     substituted from this number: several of those languages inflect the
-     *     noun with the count, which a placeholder cannot do.
-     *   - Paddle has a price for it in every currency the page quotes.
-     *     checkout() resolves the price by trial length and throws when there
-     *     is none, so a length added ahead of its prices gives a CTA that opens
-     *     nothing for the visitors it has no price for.
-     */
+
     const TRIAL_DAYS = [7];
 
     const root = document.documentElement;
