@@ -440,11 +440,7 @@ adblock.settings.detectedBrowser = /opera|opr\//i.test(navigator.userAgent) ? "o
 
 })()</script>
 <script>(()=>{
-// requires scripts/namespace
-// requires scripts/events
-// requires scripts/analytics-functions
-// requires scripts/extension-injection
-// uses scripts/platform-detection
+
 
 const maxLoadReportDelay = 3000;
 
@@ -591,21 +587,14 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     <span class="whats-new-header__name">Tokyo AdBlocker</span>
   </div>
 
-  <!--
-    Server-rendered with the same v1.0.0 fallback AdBlock's page uses, so the
-    pill never flashes empty and survives a JS failure. whats-new-stats.js
-    replaces it with the real extension version as soon as the payload lands.
-  -->
+  
   <p class="whats-new-header__version">
     <span class="whats-new-header__version-number">v2.43.3</span>
   </p>
 </header>
 
 
-  <!--
-    Everything between the brand bar and the footer sits inside one raised card,
-    matching the ABP app surface the design borrows from.
-  -->
+  
   <div class="whats-new-shell">
     <!-- ===== 2. STATUS ===== -->
 <section class="whats-new-inner whats-new-status">
@@ -613,12 +602,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
     <span class="whats-new-status__headline-line">
       Tokyo AdBlocker は最新の状態です。
     </span>
-    <!--
-      Filled by whats-new.js from whats-new-status__headline-count, and left
-      empty when the count is zero or unknown — "We've blocked 0 ads for you"
-      is a worse opening line than no line at all. The stat tile below still
-      shows 0, so nothing is hidden from the visitor.
-    -->
+    
     <span class="whats-new-statusheadline-line whats-new-statusheadline-count">これまでに延べ <span class="whats-new-status__count">27,000,000</span> 件の広告をブロックしました。</span>
   </h1>
 
@@ -695,29 +679,10 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
 </section>
 
     <!-- ===== 2b. PROMO ===== -->
-<!--
-  The top block for ?variant=vpn-opd, in place of the status block above: the
-  same page without the personal update figures, so it opens on a picture rather
-  than on "your Adblock Plus is up to date".
 
-  loading="lazy" is what keeps this off the wire for everyone else. The section
-  is display: none in every other state, and a lazy image that is never in the
-  viewport is never fetched — so the default page, which is most of the traffic,
-  pays nothing for artwork it does not show.
-
-  HEIGHT IS THE CONSTRAINT if the artwork is ever replaced. Width is free, up to
-  the 820 the card allows. Measured at 1512x828, 110 puts the CTAs of
-  ?variant=vpn-opd&trial=7 exactly where /whats-new puts its own; every pixel
-  above that pushes both buttons further past the fold.
-
-  alt is empty on purpose. The picture is the heading below it in another form —
-  an exposed connection, the octagon, the devices behind it — so a screen reader
-  that read them both would hear the same thing twice.
--->
 <section class="whats-new-inner whats-new-promo">
   <img
     class="whats-new-promo__image"
-    src="https://adblockplus.org/img/whats-new-opd-vpn.svg?3078354648"
     alt=""
     width="600"
     height="110"
