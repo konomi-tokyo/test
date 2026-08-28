@@ -310,19 +310,7 @@ adblock.logScriptError = function logScriptError(source, error) {
  * @param {Object|string} rejection.response - The response data that we recieved from the server (must be JSON stringifyable)
  * @returns {Promise}
  */
-adblock.logServiceError = function logServiceError(source, rejection) {
-  return adblock.log("service-error", {
-    source,
-    reason: rejection.reason,
-    status: rejection.status,
-    response: JSON.stringify(rejection.response),
-    browser: adblock.settings.detectedBrowser,
-    os: adblock.settings.detectedOperatingSystem,
-    ABPInstalled: !!adblock.adblockPlus,
-    ABPPremium: !!adblock.adblockPlus?.isPremium,
-    ABPVersion: adblock.adblockPlus?.version,
-  });
-}
+
 
 })()</script>
 <script>(()=>{
