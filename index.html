@@ -337,30 +337,6 @@ function handleExtensionInjection(extensionName, extensionId) {
     adblock.logScriptError("handleExtensionInjection", error);
   }
 }
-
-observeExtensionInjection("adblockPlus", "adblockPlusExtensionInfo");
-
-
-adblock.afterAdblockPlusDetected = (callback, fallback) => {
-  let cancelFallback = false;
-  if (adblock.adblockPlus && document.documentElement.dataset.hasOwnProperty("adblockPlusExtensionInfo")) {
-    cancelFallback = true;
-    callback(adblock.adblockPlus);
-  } else {
-    adblock.onceAfter("adblockPlus", data => {
-      if (!fallback || !cancelFallback) {
-        cancelFallback = true;
-        callback(data);
-      }
-    });
-    if (fallback) {
-      setTimeout(() => {
-        if (!cancelFallback) {
-          cancelFallback = true;
-          if (typeof fallback === "function") fallback();
-          else callback();
-        }
-      }, EXTENSION_INJECTION_TIMOUT);
     }
   }
 }
