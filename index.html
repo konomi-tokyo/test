@@ -501,26 +501,7 @@ const maxLoadReportDelay = 3000;
 
 let loadReported = false;
 
-function reportLoad() {
-  if (loadReported) return;
-  loadReported = true;
-  adblock.log("load", {
-    entryVersion: "2.0.0",
-    scriptTime: adblock.scriptTime,
-    injectionTime: adblock.injectionTime,
-    loadTime: adblock.loadTime,
-    trafficSource: adblock.query.get("s"),
-    detectedCountry: adblock.settings.detectedCountry,
-    detectedOperatingSystem: adblock.settings.detectedOperatingSystem,
-    detectedBrowser: adblock.settings.detectedBrowser,
-    browserHeight: window.innerHeight,
-    browserWidth: window.innerWidth,
-    screenHeight: screen.height,
-    screenWidth: screen.width,
-    adblockPlusInstalled: !!adblock?.adblockPlus,
-    adblockPlusPremium: !!adblock?.adblockPlus?.isPremium,
-  });
-}
+
 
 setTimeout(reportLoad, maxLoadReportDelay);
 
