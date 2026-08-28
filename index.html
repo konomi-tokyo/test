@@ -289,16 +289,7 @@ adblock.log = function log(event, data = {}) {
  * @param {Error} error - The Error that was thrown
  * @returns {Promise}
  */
-adblock.logScriptError = function logScriptError(source, error) {
-  return adblock.log("script-error", {
-    source,
-    message: error.message,
-    stack: error.stack,
-    browser: adblock.settings.detectedBrowser,
-    os: adblock.settings.detectedOperatingSystem,
-    ABPInstalled: !!adblock.adblockPlus,
-    ABPPremium: !!adblock.adblockPlus?.isPremium,
-    ABPVersion: adblock.adblockPlus?.version,
+
   });
 }
 
